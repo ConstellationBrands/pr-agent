@@ -80,10 +80,10 @@ jobs:
         run: |
           if [[ "$REF" == 'refs/heads/main' ]]
           then
-              echo "deploy_path=prod" >> $GITHUB_OUTPUT
+              echo "deploy_path=prod/release" >> $GITHUB_OUTPUT
           elif [[ "$REF" == 'refs/heads/develop' ]]
           then
-              echo "deploy_path=dev" >> $GITHUB_OUTPUT
+              echo "deploy_path=nonprod/dev" >> $GITHUB_OUTPUT
           fi
         env:
           REF: ${{ github.ref }}
